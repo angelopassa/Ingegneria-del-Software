@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.9.21)  21 SEP 2023 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.9.21)  21 SEP 2023 22:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -491,7 +491,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 28.
-<Stemma_unipi.png, id=42, 1284.8pt x 1284.8pt>
+<Stemma_unipi.png, id=54, 1284.8pt x 1284.8pt>
 File: Stemma_unipi.png Graphic file (type png)
 <use Stemma_unipi.png>
 Package pdftex.def Info: Stemma_unipi.png  used on input line 29.
@@ -531,7 +531,7 @@ File: ts1pag.fd 2001/06/04 font definitions for TS1/pag.
 )) (lezione2.tex [4]
 LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
 (Font)              Font shape `OT1/pag/m/sl' tried instead on input line 23.
-<img/V-model.JPG, id=89, 642.4pt x 503.8825pt>
+<img/V-model.JPG, id=104, 642.4pt x 503.8825pt>
 File: img/V-model.JPG Graphic file (type jpg)
 <use img/V-model.JPG>
 Package pdftex.def Info: img/V-model.JPG  used on input line 33.
@@ -541,26 +541,38 @@ Overfull \hbox (0.50504pt too wide) in paragraph at lines 62--63
  [] 
  []
 
-) [6] (main.aux)
+[6] [7]
+<img/modellospirale.png, id=125, 783.92876pt x 696.6025pt>
+File: img/modellospirale.png Graphic file (type png)
+<use img/modellospirale.png>
+Package pdftex.def Info: img/modellospirale.png  used on input line 102.
+(pdftex.def)             Requested size: 313.56595pt x 278.63606pt.
+ [8 <./img/modellospirale.png>]
+<img/unified_process.png, id=136, 401.5pt x 284.06125pt>
+File: img/unified_process.png Graphic file (type png)
+<use img/unified_process.png>
+Package pdftex.def Info: img/unified_process.png  used on input line 123.
+(pdftex.def)             Requested size: 321.20042pt x 227.24928pt.
+) [9 <./img/unified_process.png>] (main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4F7EAC8F0579F61A96535835E08242AF;1321.
+(rerunfilecheck)             Checksum: 9B9E576F96E2F8C9A7F1C3DF6C9055DE;1747.
  ) 
 Here is how much of TeX's memory you used:
- 21514 strings out of 475248
- 436958 string characters out of 5744162
+ 21543 strings out of 475248
+ 437533 string characters out of 5744162
  1927807 words of memory out of 5000000
- 42629 multiletter control sequences out of 15000+600000
+ 42646 multiletter control sequences out of 15000+600000
  579351 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,11n,107p,599b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb></Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/avantgar/uagd8a.pfb></Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/avantgar/uagk8a.pfb></Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/avantgar/uagko8a.pfb>
-Output written on main.pdf (6 pages, 313302 bytes).
+Output written on main.pdf (9 pages, 749117 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

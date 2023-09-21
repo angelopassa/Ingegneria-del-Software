@@ -63,3 +63,65 @@ Questo modello diventa utile quando i requisiti non sono chiari, quindi ogni pro
 \end{center}
 
 \subsubsection{Modello Incrementale}
+
+Il software viene costruito in modo iterativo, aggiungendo di volta in volta nuove funzionalità.
+
+I requisiti e la progettazione vengono definiti inizialmente, per questo è possibile applicarlo solo in caso di requisiti stabili.
+
+\paragraph{\textcolor{red}{Contro}}
+Se non viene realizzata una buona progettazione, questo modello sfocia in un \emph{Build-and-Fix}.
+
+\begin{center}
+    \begin{tikzpicture}[main/.style={rectangle, draw}]
+        \node[main] (1) {Analisi e Progettazione};
+        \node[main] (2) [below right=0.5cm and -2cm of 1] {\begin{tabular}{c} Progettazione di dettaglio \\ (implemento una singola funzionalità) \end{tabular}};
+        \node[main] (3) [below right=1cm and -1.5cm of 2] {\begin{tabular}{c} Realizzazione versione \\ incompleta \end{tabular}};
+        \draw[thick, ->] (1) -| (2);
+        \draw[thick, ->] (2) -| (3);
+        \draw[thick, ->] (3) -| (2);
+    \end{tikzpicture}
+\end{center}
+
+\newpage
+
+\subsubsection{Modello a Spirale}
+
+In questo caso ogni iterazione è formata da 4 fasi che corrispondono ai quadranti del piano:
+\begin{enumerate}
+    \item \emph{Quadrante in alto a sinistra}: definizione degli obiettivi e dei vincoli.
+    \item \emph{Quadrante in alto a destra}: analisi e risoluzione dei rischi.
+    \item \emph{Quadrante in basso a destra}: sviluppo e verifica del prossimo livello.
+    \item \emph{Quadrante in basso a sinistra}: pianificazione della fase successiva.
+\end{enumerate}
+
+Questo modello viene anche chiamato \emph{\textcolor{cyan}{risk driven}} in quanto è incentrato principalmente sull'analisi
+dei rischi. Inoltre si ispira profondamente al metodo iterazivo \emph{\textcolor{cyan}{plan-do-check-act cycle}} \footnote{\url{https://it.wikipedia.org/wiki/Ciclo_di_Deming}}
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[scale=0.4]{img/modellospirale.png}
+    \end{center}
+\end{figure}
+
+\subsection{Unified Process}
+
+In questo modello vengono distinte quattro fasi chiamate \emph{\textcolor{cyan}{Inception}}, \emph{\textcolor{cyan}{Elaboration}}, \emph{\textcolor{cyan}{Construction}}
+e \emph{\textcolor{cyan}{Transition}}. Ogni fase può presentare un numero variabile di iterazioni anche in base alla dimensione
+del progetto.
+
+Questo modello viene definito \textcolor{cyan}{iterativo incrementale}, \emph{incrementale} perchè
+alla fine di ogni iterazione si ottiene un rilascio del sistema con funzionalità in più o migliorate
+rispetto al rilascio precedente.
+
+Inoltre viene data molta importanza all'architettura del sistema, infatti già dalle prime fasi ci si
+concentra soprattutto sull'architettura anche se a livello molto superficiale, lasciando i dettagli alle fasi successive. In questo
+modo è molto facile avere una visione generale del sistema che sarà facilmente modellabile sulla variazione dei requisiti. Per
+questo, piuttosto che dai requisiti, ci si fà guidare principalmente dai \emph{casi d'uso} e dall'\emph{analisi dei rischi}.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[scale=0.8]{img/unified_process.png}
+    \end{center}
+\end{figure}
+
+\subsection{Processi Agili}

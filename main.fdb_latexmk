@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1695311929 "/Users/angelopassarelli/Desktop/Ingegneria del Software/main.tex" "main.pdf" "main" 1695311930 0
+["pdflatex"] 1695328013 "/Users/angelopassarelli/Desktop/Ingegneria del Software/main.tex" "main.pdf" "main" 1695328014 0
   "/Users/angelopassarelli/Desktop/Ingegneria del Software/main.tex" 1695311520 1089 50fa104b46280f64612993d04f0bf031 ""
   "/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1695281051 123019 4e6d54fe28a67ad1b512b0cc9d03c2e8 ""
   "/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1695299296 24155655 8d8a0d6a7e49b385ac7f2555151b7cd1 ""
@@ -159,12 +159,14 @@
   "/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1679560657 56148 51a9a8571c07b9921892ae11063ae853 ""
   "Stemma_unipi.png" 1695051418 246681 471615017a9e571684e0b3c712a562f9 ""
   "img/V-model.JPG" 1695309702 53623 71fa4c2cd9695aaa891b20618d9527ca ""
+  "img/modellospirale.png" 1695325164 427089 8400a59e260ef83d8f4f2baa6bb3a90d ""
+  "img/unified_process.png" 1695326920 26910 f1de7aad47c9583d0de3d0a43c52b650 ""
   "lezione1.tex" 1695306695 2802 306961c57fce2287f63e1b139fe2b751 ""
-  "lezione2.tex" 1695311928 2901 0ac86e2b7c8ee173e1812b90c73f6024 ""
-  "main.aux" 1695311930 2335 3d292fece1faa2b94b6ed359125dd97a "pdflatex"
-  "main.out" 1695311930 1321 4f7eac8f0579f61a96535835e08242af "pdflatex"
+  "lezione2.tex" 1695328012 6006 c8435c3a237d42f1fc80306b85cb17a9 ""
+  "main.aux" 1695328014 2822 f04c35a2a2bd4f9bdc5584bf3998e2c4 "pdflatex"
+  "main.out" 1695328014 1747 9b9e576f96e2f8c9a7f1c3df6c9055de "pdflatex"
   "main.tex" 1695311520 1089 50fa104b46280f64612993d04f0bf031 ""
-  "main.toc" 1695311930 1041 62fe786e63c066de86245622cf841ca3 "pdflatex"
+  "main.toc" 1695328014 1364 c234137551f3e61662f21a8c75615383 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
