@@ -7,6 +7,8 @@ INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amscls/amsthm.sty
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amscls/amsthm.sty
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
@@ -132,6 +134,34 @@ INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
@@ -278,7 +308,17 @@ INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ts1pag.fd
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ts1pag.fd
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/avantgar/pagk8c.tfm
+INPUT ./lezione2.tex
+INPUT ./lezione2.tex
+INPUT lezione2.tex
 INPUT /Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/avantgar/pagk8c.vf
+INPUT ./img/V-model.JPG
+INPUT ./img/V-model.JPG
+INPUT ./img/V-model.JPG
+INPUT ./img/V-model.JPG
+INPUT ./img/V-model.JPG
+INPUT ./img/V-model.JPG
+INPUT ./img/V-model.JPG
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

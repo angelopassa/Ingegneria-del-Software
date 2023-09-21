@@ -1,12 +1,16 @@
 \documentclass{article}
+\usepackage{amsthm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{avant}
 \usepackage{fancyhdr}
 \usepackage{tikz}
+\usetikzlibrary{shapes, positioning}
 \usepackage{hyperref}
 \usepackage[bottom]{footmisc}
 
 \renewcommand{\familydefault}{\sfdefault}   % cambio font
+\theoremstyle{definition}
+\newtheorem*{definition}{Definizione}
 
 \pagestyle{fancy}
 \fancyfoot[L]{Ingegneria del Software}
@@ -36,5 +40,6 @@
         
         \input{lezione1.tex}
         
+        \input{lezione2.tex}
     \end{sloppypar}
 \end{document}

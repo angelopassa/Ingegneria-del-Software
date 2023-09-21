@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.9.21)  21 SEP 2023 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.9.21)  21 SEP 2023 17:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,6 +23,17 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
+) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks17
+\thm@bodyfont=\toks18
+\thm@headfont=\toks19
+\thm@notefont=\toks20
+\thm@headpunct=\toks21
+\thm@preskip=\skip50
+\thm@postskip=\skip51
+\thm@headsep=\skip52
+\dth@everypar=\toks22
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
@@ -47,17 +58,17 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 Package: avant 2020/03/25 PSNFSS-v9.3 (SPQR) 
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip50
-\f@nch@O@elh=\skip51
-\f@nch@O@erh=\skip52
-\f@nch@O@olh=\skip53
-\f@nch@O@orh=\skip54
-\f@nch@O@elf=\skip55
-\f@nch@O@erf=\skip56
-\f@nch@O@olf=\skip57
-\f@nch@O@orf=\skip58
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks17
+\pgfutil@everybye=\toks23
 \pgfutil@tempdima=\dimen141
 \pgfutil@tempdimb=\dimen142
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -70,7 +81,7 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+\KV@toks@=\toks24
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
@@ -85,10 +96,10 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks19
-\pgfkeys@temptoks=\toks20
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks21
+\pgfkeys@tmptoks=\toks27
 ))
 \pgf@x=\dimen145
 \pgf@y=\dimen146
@@ -106,9 +117,9 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \c@pgf@countb=\count194
 \c@pgf@countc=\count195
 \c@pgf@countd=\count196
-\t@pgf@toka=\toks22
-\t@pgf@tokb=\toks23
-\t@pgf@tokc=\toks24
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
 \pgf@sys@id@count=\count197
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -130,9 +141,9 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@dimen=\dimen155
 \pgfmath@count=\count266
 \pgfmath@box=\box52
-\pgfmath@toks=\toks25
-\pgfmath@stack@operand=\toks26
-\pgfmath@stack@operation=\toks27
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count267
 )) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfint.code.tex) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -215,8 +226,8 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen182
 \pgffor@skip=\dimen183
-\pgffor@stack=\toks28
-\pgffor@toks=\toks29
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
 )) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
@@ -249,7 +260,52 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count279
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
+))) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box62
+\pgfnodeparttwobox=\box63
+\pgfnodepartthreebox=\box64
+\pgfnodepartfourbox=\box65
+\pgfnodeparttwentybox=\box66
+\pgfnodepartnineteenbox=\box67
+\pgfnodeparteighteenbox=\box68
+\pgfnodepartseventeenbox=\box69
+\pgfnodepartsixteenbox=\box70
+\pgfnodepartfifteenbox=\box71
+\pgfnodepartfourteenbox=\box72
+\pgfnodepartthirteenbox=\box73
+\pgfnodeparttwelvebox=\box74
+\pgfnodepartelevenbox=\box75
+\pgfnodeparttenbox=\box76
+\pgfnodepartninebox=\box77
+\pgfnodeparteightbox=\box78
+\pgfnodepartsevenbox=\box79
+\pgfnodepartsixbox=\box80
+\pgfnodepartfivebox=\box81
+))) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -265,8 +321,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
@@ -359,10 +414,10 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip59
+\Hy@SectionHShift=\skip62
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2023/07/05 v6.0f a miscellany of footnote facilities
-\FN@temptoken=\toks30
+\FN@temptoken=\toks36
 \footnotemargin=\dimen197
 \@outputbox@depth=\dimen198
 Package footmisc Info: Declaring symbol style bringhurst on input line 696.
@@ -372,47 +427,47 @@ Package footmisc Info: Declaring symbol style lamport-robust on input line 724.
 Package footmisc Info: Declaring symbol style lamport* on input line 744.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 765.
 )
-LaTeX Font Info:    Trying to load font information for OT1+pag on input line 22.
+LaTeX Font Info:    Trying to load font information for OT1+pag on input line 26.
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1pag.fd
 File: ot1pag.fd 2001/06/04 font definitions for OT1/pag.
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count292
-\l__pdf_internal_box=\box62
+\l__pdf_internal_box=\box82
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count293
 \scratchdimen=\dimen199
-\scratchbox=\box63
+\scratchbox=\box83
 \nofMPsegments=\count294
 \nofMParguments=\count295
-\everyMPshowfont=\toks31
+\everyMPshowfont=\toks37
 \MPscratchCnt=\count296
 \MPscratchDim=\dimen256
 \MPnumerator=\count297
 \makeMPintoPDFobject=\count298
-\everyMPtoPDFconversion=\toks32
+\everyMPtoPDFconversion=\toks38
 ) (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/grfext/grfext.sty
@@ -425,31 +480,31 @@ Package grfext Info: Graphics extension search list:
  (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 26.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 24.
+(Font)              <12> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 24.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 24.
-<Stemma_unipi.png, id=10, 1284.8pt x 1284.8pt>
+(Font)              <6> on input line 28.
+<Stemma_unipi.png, id=42, 1284.8pt x 1284.8pt>
 File: Stemma_unipi.png Graphic file (type png)
 <use Stemma_unipi.png>
-Package pdftex.def Info: Stemma_unipi.png  used on input line 25.
+Package pdftex.def Info: Stemma_unipi.png  used on input line 29.
 (pdftex.def)             Requested size: 192.71169pt x 192.71169pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 29.
+(Font)              <7> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 29.
+(Font)              <5> on input line 33.
  [1
 
 {/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map} <./Stemma_unipi.png>]
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 32.
+(Font)              Font shape `OT1/pag/db/n' tried instead on input line 36.
  (main.toc
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <10> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 1.
@@ -473,26 +528,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--36
 LaTeX Font Info:    Trying to load font information for TS1+pag on input line 37.
 (/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ts1pag.fd
 File: ts1pag.fd 2001/06/04 font definitions for TS1/pag.
-)) [4] (main.aux)
+)) (lezione2.tex [4]
+LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
+(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 23.
+<img/V-model.JPG, id=89, 642.4pt x 503.8825pt>
+File: img/V-model.JPG Graphic file (type jpg)
+<use img/V-model.JPG>
+Package pdftex.def Info: img/V-model.JPG  used on input line 33.
+(pdftex.def)             Requested size: 321.19922pt x 251.94063pt.
+ [5 <./img/V-model.JPG>]
+Overfull \hbox (0.50504pt too wide) in paragraph at lines 62--63
+ [] 
+ []
+
+) [6] (main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 04B7D2BE7BF9BEB420FA3B6A4C01A757;103.
+(rerunfilecheck)             Checksum: 4F7EAC8F0579F61A96535835E08242AF;1321.
  ) 
 Here is how much of TeX's memory you used:
- 19483 strings out of 475248
- 377854 string characters out of 5744162
- 1925807 words of memory out of 5000000
- 40662 multiletter control sequences out of 15000+600000
+ 21514 strings out of 475248
+ 436958 string characters out of 5744162
+ 1927807 words of memory out of 5000000
+ 42629 multiletter control sequences out of 15000+600000
  579351 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,107p,464b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,11n,107p,599b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb></Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/avantgar/uagd8a.pfb></Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/avantgar/uagk8a.pfb></Users/angelopassarelli/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/avantgar/uagko8a.pfb>
-Output written on main.pdf (4 pages, 241915 bytes).
+Output written on main.pdf (6 pages, 313302 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
