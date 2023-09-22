@@ -125,3 +125,107 @@ questo, piuttosto che dai requisiti, ci si fà guidare principalmente dai \emph{
 \end{figure}
 
 \subsection{Processi Agili}
+
+\begin{definition}[Metodo Agile]
+    Con \textcolor{cyan}{metodo agile} si intende un metodo per lo sviluppo del software
+    che si basa principalmente sul coinvolgimento del committente.
+    Questa metodologia si riferisce ai principi del \emph{\textcolor{cyan}{Manifesto di Snowbird}} del 2001.
+\end{definition}
+
+I concetti chiave di questi processi sono:
+
+\begin{itemize}
+    \item \textcolor{cyan}{Continuous Integration}: rendere il più automatico possibile la consegna e l'integrazione dei singoli moduli.
+    \item \textcolor{cyan}{Continuous Delivery}: rilascio frequente e supportato delle nuovi versioni del software.
+    \item \textcolor{cyan}{DevOps}: \emph{Development} e \emph{Operations}, ovvero maggiore collaborazione tra sviluppatori e responsabili della
+        manutenzione, della sicurezza e dell'infrastruttura dell'azienda.
+\end{itemize}
+
+\subsubsection{Il Manifesto di Snowbird}
+
+Il \emph{Manifesto di Snowbird} si fonda su quattro punti fondamentali:
+
+\begin{enumerate}
+    \item \textcolor{cyan}{Comunicazione}: la comunicazione fra tutti gli attori del progetto è centrale, soprattutto le interazioni e
+        la collaborazione con i clienti.
+    \item \textcolor{cyan}{Semplicità}: si mantiene il codice sorgente il più semplice possibile, ma comunque avanzato tecnicamente,
+        in questo modo si riduce la documentazione al minimo indispensabile.
+    \item \textcolor{cyan}{Feedback}: sin dal primo giorno di sviluppo il codice viene testato, in modo da poter rilasciare versioni ad intervalli molto frequenti.
+    \item \textcolor{cyan}{Coraggio}: dare in uso il sistema il prima possibile ed implementare i cambiamenti richiesti man mano.
+\end{enumerate}
+
+Di seguito sono riportati due modelli che si basano sui \emph{processi agili}.
+
+\subsubsection{eXtreme Programming}
+
+Si basa su un insieme di consuetudini:
+
+\begin{itemize}
+    \item \emph{Pianificazione flessibile}: è basata su un insieme di scenari proposti dagli utenti e i programmatori vengono coinvolti direttamente.
+    \item \emph{Rilasci frequenti}: più o meno ogni 2-4 settimane, e alla fine si ricomincia con una nuova pianificazione.
+    \item \emph{Progetti semplici}: comprensibili a tutti.
+    \item \emph{Testing}: test basati sui singoli scenari e con supporto automatico.
+    \item \emph{Test Driven Development}: i casi di test vengono definiti prima della scrittura del codice.
+    \item \emph{Cliente sempre a disposizione}
+    \item \emph{Programmazione a coppie}: viene usato un solo terminale, una persona svolge il ruolo di \emph{\textcolor{cyan}{driver}}
+        che scrive il codice, mentre un'altra fà il \emph{\textcolor{cyan}{navigatore}}, ovvero controlla il lavoro del \emph{driver} attivamente.
+    \item \emph{No al lavoro straordinario}
+    \item \emph{Collettivizzazione del codice}: accesso libero e continua integrazione.
+    \item \emph{Code Refactoring}: modificare il codice senza cambiare il suo comportamento e commentarlo il più possibile.
+    \item \emph{Daily Stand Up Meeting}
+\end{itemize}
+
+\subsubsection{SCRUM}
+
+\begin{definition}[SCRUM]
+    Con \emph{\textcolor{cyan}{SCRUM}} si intende un processo \emph{iterativo} ed \emph{incrementale}, dove alla fine
+    di ogni iterazione vengono rilasciate un insieme di funzionalità potenzialmente rilasciabili.
+\end{definition}
+
+Il processo è diviso in tre fasi:
+
+\begin{enumerate}
+    \item \textbf{\textcolor{cyan}{Pre-game phase}}: 
+        \begin{enumerate}
+            \item \textcolor{cyan}{Planning sub-phase}: viene creata una \emph{\textcolor{cyan}{Product Backlog List}}
+                che contiene tutti i requisiti conosciuti.
+            \item \textcolor{cyan}{Architecture sub-phase}: viene già pianificato il design di alto livello e l'architettura del sistema.
+        \end{enumerate}
+    \item \textbf{\textcolor{cyan}{Development phase}}: in questa fase il sistema viene sviluppato attraverso una serie di \emph{\textcolor{cyan}{Sprint}},
+        ovvero cicli iterativi nei quali vengono sviluppate o migliorate una serie di funzionalità, e ogni sprint può durare circa 1-4 settimane. Lo \emph{Sprint} ovviamente
+        include le classiche fasi di sviluppo del software.
+    \item \textbf{\textcolor{cyan}{Post-game phase}}: il prodotto viene preparato per il rilascio, ovvero si prepara l'\emph{integrazione},
+        i \emph{test}, la \emph{documentazione} per l'utente e la preparazione del materiale di \emph{marketing}.
+\end{enumerate}
+
+I ruoli principali durante l'esecuzione di un processo \emph{SCRUM} sono tre:
+
+\begin{itemize}
+    \item \textbf{\textcolor{cyan}{Product Owner}}: ci si riferisce a quella persona responsabile di accettare o rifiutare i risultati di un lavoro e di poter terminare uno \emph{Sprint}, inoltre
+        fà da raccordo fra tutti soggetti interessati nel progetto.
+    \item \textbf{\textcolor{cyan}{Membri del Team}}: i membri decidono cosa fare in ogni \emph{Sprint}, ogni team è indipendente e i membri non fanno capo ad alcun project manager.
+        Ogni membro ha diverse specializzazioni (\emph{cross-functional}), in modo tale da non avere persone con troppo carico di lavoro e ognuno si occupa di un singolo lavoro alla volta.
+    \item \textbf{\textcolor{cyan}{Scrum Master}}: non ha alcuna autorità sul team, ma si occupa di supportarlo e motivarlo, garantendo anche le condizioni ambientali per lavorare al meglio.
+\end{itemize}
+
+\paragraph{Kanban Board} Questa lavagna permette di gestire al meglio il flusso del lavoro. Come mostrato in figura è presente
+un \emph{\textcolor{cyan}{Work In Progress Limit}} che definisce un limite alla quantità di post-it che possono essere presenti in
+ogni colonna. Questo limite permette di completare più velocemente i singoli lavori, in modo tale di dare qualcosa al cliente il prima possibile e di
+individuare facilmente i \textcolor{cyan}{colli di bottiglia} che possono rallentare gli altri lavori.
+Inoltre permette di ridurre il \emph{\textcolor{cyan}{task switching}}, ovvero il lavoro su più task contemporaneamente.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[scale=0.5]{img/kanboard.png}
+    \end{center}
+\end{figure}
+
+Gli eventi che fanno parte di uno \emph{Sprint} sono i seguenti:
+\begin{enumerate}
+    \item \textcolor{cyan}{Sprint planning}: il \emph{product owner} gestisce l'evento di pianificazione dello \emph{Sprint}.
+    \item \textcolor{cyan}{Daily meeting}: i membri del team e gli SCRUM master si ritrovano davanti la \emph{kanban} e discutono delle
+        difficultà che hanno riscontrato.
+    \item \textcolor{cyan}{Review}: alla fine di di una modifica concreta al software, questo viene ispezionato in collaborazione con gli utenti per ottenere un feedback
+        e per discutere su cambiamenti o nuove idee.
+    \item \textcolor{cyan}{Retrospettiva}: questa fase permette di riflettere, studiare e adattarsi per lo \emph{Sprint} successivo.
+\end{enumerate}
