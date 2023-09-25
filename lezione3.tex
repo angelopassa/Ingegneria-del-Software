@@ -19,8 +19,8 @@ dell'utente. In seguito vengono svolte due analisi:
     \item \textcolor{cyan}{Analisi di Mercato}: si fà un confronto con il mercato attuale e si stimano i costi di
         produzione e quanto l'investimento può essere remunerativo.
     \item \textcolor{cyan}{Analisi Tecnica}: si studiano tutti gli strumenti per la realizzazione del progetto,
-        come i software, le architteture, gli hardware e gli algoritmi. Inoltre si studia come deve essere fatta la prototipazione
-        del processo.
+        come i software, le architetture, gli hardware e gli algoritmi. Inoltre si studia come deve essere fatta la prototipazione
+        del software e la futura ricerca. 
 \end{itemize}
 
 \subsection{Dominio}
@@ -29,7 +29,7 @@ Il \textbf{\textcolor{cyan}{dominio}} è il contesto in cui il software opera. P
 un \textcolor{cyan}{glossario}, ovvero una collezione di definizioni di termini rilevanti in quel dominio specifico e
 che può essere riusato in progetti successivi nello stesso dominio. Inoltre occorre definire un \textcolor{cyan}{modello statico},
 quindi come interagiscono fra loro gli elementi del dominio staticamente, e un \textcolor{cyan}{modello dinamico}, ovvero come si comporta il dominio
-in base all'avvenire di un determinato evento. Questi due modelli possono essere descritti sia 
+in base all'avvenire di un determinato evento che può coinvolgere gli utenti. Questi due modelli possono essere descritti sia 
 tramite l'uso del linguaggio UML \footnote{\url{https://it.wikipedia.org/wiki/Unified_Modeling_Language}}, sia usando la semplice descrizione testuale.
 
 \subsection{Requisiti}
@@ -58,18 +58,18 @@ anche una \emph{deadline} per la consegna del progetto.
 
 L'\emph{analisi dei requisiti} viene svolta in cinque passi:
 \begin{enumerate}
-    \item \textcolor{cyan}{Acquisizione}
-    \item \textcolor{cyan}{Elaborazione}
-    \item \textcolor{cyan}{Convalida}
-    \item \textcolor{cyan}{Negozazione}
-    \item \textcolor{cyan}{Gestione}
+    \item \textbf{\textcolor{cyan}{Acquisizione}}
+    \item \textbf{\textcolor{cyan}{Elaborazione}}
+    \item \textbf{\textcolor{cyan}{Convalida}}
+    \item \textbf{\textcolor{cyan}{Negozazione}}
+    \item \textbf{\textcolor{cyan}{Gestione}}
 \end{enumerate}
 
 \subsubsection{Acquisizione}
 
 Il team di analisti incontra i membri dell'organizzazione del committente e si procede con
 la raccolta dei requisiti che può avvenire tramite: semplici interviste, questionari, costruzione di
-prototipi (anche su carta), studio di documenti o l'osservazione di possibili utenti mentre lavoro.
+prototipi (anche su carta), studio di documenti o l'osservazione di possibili utenti mentre lavorano.
 
 \subsubsection{Elaborazione}
 
@@ -127,6 +127,66 @@ evitati i seguenti difetti:
     \item \textcolor{cyan}{Ridondanza}: può esserci, ma solo tra sezioni diverse del documento.
 \end{itemize}
 
-\subsubsection{Negozazione}
+Le principali tecniche di convalida dei requisiti sono:
+\begin{itemize}
+    \item \textcolor{cyan}{Deskcheck}
+        \begin{itemize}
+            \item \textcolor{cyan}{Walkthrough}: ovvero il documento viene analizzato per intero sequenzialmente.
+            \item \textcolor{cyan}{Ispezione}: la lettura del documento è strutturata, utilizzando per esempio la tecnica del
+                lemmario.
+        \end{itemize}
+    \item Uso di \textcolor{cyan}{strumenti di analisi} del linguaggio naturale.
+    \item Uso di \textcolor{cyan}{prototipi}.
+\end{itemize}
+
+Una volta trovati i difetti, è importante ricordarsi che vanno sempre risolti con
+il committente.
+
+\subsubsection{Negoziazione}
+
+In questa fase vengono assegnate delle priorità ai requisiti in base alle
+\textcolor{cyan}{esigenze del committente} e ai \textcolor{cyan}{costi} e \textcolor{cyan}{tempi} di
+produzione.
+
+Questa fase è importante per decidere se alcuni requisiti possono essere \textcolor{cyan}{cancellati} oppure
+\textcolor{cyan}{sviluppati} successivamente.
+
+\paragraph{MoSCoW} Questa è una tecnica per dare priorità ai requisiti, i quali vengono divisi in quattro classi:
+\begin{itemize}
+    \item \textcolor{cyan}{Must have}: requisiti irrinunciabili per il cliente.
+    \item \textcolor{cyan}{Should have}: non necessari ma utili.
+    \item \textcolor{cyan}{Could have}: non molto utili, da realizzare solo se c'è tempo.
+    \item \textcolor{cyan}{Want to have}: da sviluppare in successive versioni.
+\end{itemize}
 
 \subsubsection{Gestione}
+
+Questa fase si occupa di tre aspetti principali:
+\begin{itemize}
+    \item \textcolor{cyan}{Identificazione}: ad ogni requisito viene assegnato un identificatore univoco.
+    \item \textcolor{cyan}{Attributi}: ad ogni requisito vengono assegnati attributi relativi allo \textcolor{MidnightBlue}{stato},
+        \textcolor{MidnightBlue}{priorità}, \textcolor{MidnightBlue}{sforzo} in termini di giorni e/o personale da impiegare, \textcolor{MidnightBlue}{rischio},
+        e la \textcolor{MidnightBlue}{versione destinazione} per quanto riguarda lo sviluppo incrementale. 
+    \item \textcolor{cyan}{Tracciabilità}: ovvero la capacità di descrivere e seguire la vita di un requisito. Viene costruita una mappa tra i requisiti
+        e le \textcolor{MidnightBlue}{componenti del sistema}, il \textcolor{MidnightBlue}{codice} ed i \textcolor{MidnightBlue}{test}.
+\end{itemize}
+
+\paragraph{Contratto} Il \emph{documento dei requisiti} precede la stipula del contratto.
+
+\subsection{Casi d'uso}
+
+I \textbf{\textcolor{cyan}{casi d'uso}} sono un altro modo per acquisire i requisiti, valutando le interazioni degli utenti col sistema
+e indicando al committente i risultati attesi. I casi d'uso oltre ad includere la sequenza corretta di eventi attesi devono anche presentare i comportamenti inattesi,
+ovvero le \textcolor{cyan}{eccezioni}.
+
+\subsection{User Stories}
+
+Sono un'altra tecnica di raccolta dei requisiti utilizzata principalmente nei \emph{\textcolor{cyan}{processi agile}} e consiste
+nell'utilizzo di \emph{\textcolor{cyan}{user story cards}} per scrivere i requisiti, che in linea generale hanno questa forma:
+\begin{center}
+    \emph{Nel mio ruolo di $<$ruolo utente$>$, ho bisogno che il sistema $<$obiettivo$>$, al fine di $<$beneficio$>$}
+\end{center}
+
+\paragraph{\textcolor{red}{Contro}} Il problema principale delle \emph{user stories} è la \textcolor{cyan}{scalabilità}, 
+ovvero sono difficili da trasporre su grandi progetti e problematiche se il team è distribuito geograficamente. Inoltre, essendo
+informali e brevi non sono adatte per raggiungere degli accordi legali e raramente includono i \emph{requisiti non funzionali}.
