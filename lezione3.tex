@@ -1,0 +1,132 @@
+\section{Analisi dei Requisiti}
+
+\begin{definition}[Analisi dei Requisiti]
+    Si intende il processo di studio e analisi delle esigenze del committente e dell'utente per
+    giungere alla produzione di un documento che definisce il \emph{dominio} del problema e i \emph{requisiti} del software.
+    In alcuni casi si definiscono anche i \emph{casi di test} e il \emph{manuale utente}.
+\end{definition}
+
+Prima di passare alla fase vera e propria di \emph{analisi dei requisiti}
+occorre seguire una fase preliminare per stabilire la realizzabilità
+del progetto software.
+
+\subsection{Studio di Fattibilità}
+
+Si basa principalmente sulla descrizione del software e delle necessità
+dell'utente. In seguito vengono svolte due analisi:
+
+\begin{itemize}
+    \item \textcolor{cyan}{Analisi di Mercato}: si fà un confronto con il mercato attuale e si stimano i costi di
+        produzione e quanto l'investimento può essere remunerativo.
+    \item \textcolor{cyan}{Analisi Tecnica}: si studiano tutti gli strumenti per la realizzazione del progetto,
+        come i software, le architteture, gli hardware e gli algoritmi. Inoltre si studia come deve essere fatta la prototipazione
+        del processo.
+\end{itemize}
+
+\subsection{Dominio}
+
+Il \textbf{\textcolor{cyan}{dominio}} è il contesto in cui il software opera. Per definirlo occorre costruire
+un \textcolor{cyan}{glossario}, ovvero una collezione di definizioni di termini rilevanti in quel dominio specifico e
+che può essere riusato in progetti successivi nello stesso dominio. Inoltre occorre definire un \textcolor{cyan}{modello statico},
+quindi come interagiscono fra loro gli elementi del dominio staticamente, e un \textcolor{cyan}{modello dinamico}, ovvero come si comporta il dominio
+in base all'avvenire di un determinato evento. Questi due modelli possono essere descritti sia 
+tramite l'uso del linguaggio UML \footnote{\url{https://it.wikipedia.org/wiki/Unified_Modeling_Language}}, sia usando la semplice descrizione testuale.
+
+\subsection{Requisiti}
+
+\begin{definition}[Requisito]
+    Il requisito è una proprietà che deve essere garantita dal sistema per soddisfare
+    una qualsiasi necessità dell'utente.
+\end{definition}
+
+I requisiti possono dividersi in due categorie:
+\begin{itemize}
+    \item \textbf{\textcolor{cyan}{Requisiti funzionali}}: quelli che descrivono le funzionalità e il comportamento del software.
+    \item \textbf{\textcolor{cyan}{Requisiti non funzionali}}: descrivono le proprietà del software o del processo di sviluppo. Ad esemprio le caratteristiche di
+        efficienza e affidabilità, l'interfaccia, il linguaggio di programmazione e l'ambiente di sviluppo scelti, i vincoli legislativi e i requisiti hardware o di rete.
+\end{itemize}
+
+I requisiti possono essere descritti mediante l'uso di diversi linguaggi, formali o meno. In questo caso si vede
+la descrizione dei requisiti mediante la produzione di un documento scritto in linguaggio naturale.
+
+\subsection{Documento dei Requisiti}
+
+Questo documento è un contratto tra lo sviluppatore e il committente, che elenca i requisti e i vincoli che il software deve soddisfare, e specifica
+anche una \emph{deadline} per la consegna del progetto.
+
+\subsection{Fasi dell'Analisi dei Requisiti}
+
+L'\emph{analisi dei requisiti} viene svolta in cinque passi:
+\begin{enumerate}
+    \item \textcolor{cyan}{Acquisizione}
+    \item \textcolor{cyan}{Elaborazione}
+    \item \textcolor{cyan}{Convalida}
+    \item \textcolor{cyan}{Negozazione}
+    \item \textcolor{cyan}{Gestione}
+\end{enumerate}
+
+\subsubsection{Acquisizione}
+
+Il team di analisti incontra i membri dell'organizzazione del committente e si procede con
+la raccolta dei requisiti che può avvenire tramite: semplici interviste, questionari, costruzione di
+prototipi (anche su carta), studio di documenti o l'osservazione di possibili utenti mentre lavoro.
+
+\subsubsection{Elaborazione}
+
+Viene scritta la prima bozza del \emph{documento dei requisti}, dove quest'ultimi vengono trattati in modo
+più approfondito. La struttura del documento deve essere la seguente:
+
+\begin{center}
+    \begin{tabular}{||c||}
+        \hline
+        \emph{Introduzione} \\
+        \hline
+        \emph{Glossario} \\
+        \hline
+        \emph{Definizione dei Requisiti Funzionali} \\
+        \hline
+        \emph{Definizione dei Requisiti Non Funzionali} \\
+        \hline
+        \emph{Architettura}: la strutturazione del software in sottosistemi. \\
+        \hline
+        \emph{Specifica dettagliata dei Requisiti Funzionali} \\
+        \hline
+        \emph{Modelli astratti}: descrivere il sistema in base \\ a ciascun punto di vista. \\
+        \hline
+        \emph{Evoluzione del sistema}: successivi cambiamenti. \\
+        \hline
+        \emph{Appendici}: descrizione della piattaforma hardware, database, \\ manuale utente e i piani di test. \\
+        \hline
+        \emph{Indici}: costruire un lemmario, quindi una lista di termini \\ che puntano ai requisiti che li usano. \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\paragraph{Nota Bene} Nella descrizione dei requisiti occorre sempre usare la forma assertiva.
+Esempio:
+\begin{center}
+    \emph{Il $<$sistema$>$ deve $<$funzionalità$>$/$<$proprietà$>$}
+\end{center}
+
+\subsubsection{Convalida}
+
+Nella fase di convalida occorre revisionare il documento per far sì che vengano
+evitati i seguenti difetti:
+
+\begin{itemize}
+    \item \textcolor{cyan}{Omissioni}: requisiti mancanti.
+    \item \textcolor{cyan}{Inconsistenze}: contraddizione tra i requisiti o tra un requisito e il contesto.
+    \item \textcolor{cyan}{Ambiguità}: vaghezze o requisiti che possono avere più significati. Le ambiguità all'interno del linguaggio naturale
+        possono essere portate da \textcolor{MidnightBlue}{quantificatori}, \textcolor{MidnightBlue}{disgiunzioni}
+        oppure possono presentarsi ambiguità di \textcolor{MidnightBlue}{coordinazione} (nel caso si usano sia la \emph{o} che la \emph{e} nella stessa frase) oppure 
+        \textcolor{MidnightBlue}{referenziale} nell'uso non chiaro di pronomi.
+        Inoltre occorre sempre evitare \textcolor{MidnightBlue}{verbi deboli}, \textcolor{MidnightBlue}{forme passive}, ovvero verbi senza un soggetto esplicito ed anche \textcolor{MidnightBlue}{negazione}
+        e \textcolor{MidnightBlue}{doppie negazioni}.
+    \item \textcolor{cyan}{Sinonimi}, \textcolor{cyan}{Omonimi}: termini diversi con lo stesso significato e termini uguali con significato diverso.
+    \item \textcolor{cyan}{Presenza di dettagli tecnici}
+    \item \textcolor{cyan}{Ridondanza}: può esserci, ma solo tra sezioni diverse del documento.
+\end{itemize}
+
+\subsubsection{Negozazione}
+
+\subsubsection{Gestione}
