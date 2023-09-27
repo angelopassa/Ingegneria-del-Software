@@ -45,6 +45,8 @@ le funzionalità viste dall'esterno (lato utente).
         \item Il \textcolor{cyan}{tempo}.
     \end{itemize}
     All'interno del diagramma gli attori sono delle classi e sono indicati con un nome in maiuscolo.
+    Dato che sono classi è possibile fare delle generalizzazioni sugli \emph{attori}, ovvero è possibile creare
+    delle gerarchie.
 \end{definition}
 
 \begin{definition}[Caso d'Uso]
@@ -66,17 +68,12 @@ essere presenti casi d'uso non collegati ad alcun attore.
 
 \begin{figure}[h]
     \centering
+    \includegraphics[scale=0.5]{img/caso.png}
 \end{figure}
 
 \subsection{Narrativa dei Casi d'Uso}
 Per poter descrivere il \emph{modello dinamico}, viene redatto un documento che permette di
 rappresentare gli scenari di ogni caso d'uso dal punto di vista di ogni attore coinvolto.
-
-\begin{definition}[Precondizioni e postcondizioni]
-    Le \textbf{\textcolor{cyan}{precondizioni}} e le \textbf{\textcolor{cyan}{postcondizioni}} sono
-    dei predicati che devono sempre essere veri in uno stato: per le \emph{precondizioni} prima di iniziare il caso d'uso,
-    per le \emph{postcondizioni} alla fine.
-\end{definition}
 
 La descrizione di un caso d'uso segue questa struttura:
 
@@ -102,6 +99,23 @@ La descrizione di un caso d'uso segue questa struttura:
     \end{tabular}
 \end{center}
 
+\begin{definition}[Precondizioni e postcondizioni]
+    Le \textbf{\textcolor{cyan}{precondizioni}} e le \textbf{\textcolor{cyan}{postcondizioni}} sono
+    dei predicati che devono sempre essere veri in uno stato: per le \emph{precondizioni} prima di iniziare il caso d'uso,
+    per le \emph{postcondizioni} alla fine. La relazione tra \emph{precondizioni}, \emph{postcondizioni} e
+    sequenza principale ed alternativa ha a che fare con la \emph{logica di Hoare} \footnote{\url{https://it.wikipedia.org/wiki/Logica_di_Hoare}},
+    infatti è possibile costruire la seguente \emph{tripla di Hoare}:
+    \[
+        \{Precondizione\} \; Sequenza \; Principale \; \{Postcondizione\}
+    \]
+    Ciò significa che per ogni stato $\sigma$ che soddisfa la \emph{precondizione}, se l'esecuzione della
+    \emph{sequenza principale} nello stato $\sigma$ termina producendo uno stato $\sigma'$, allora la \emph{postcondizione}
+    nello stato $\sigma'$ deve essere vera.
+
+    Questo però significa che se l'esecuzione della \emph{sequenza principale} non termina o termina in modo inaspettato come indicato
+    nella \emph{sequenza alternativa}, allora la \emph{postcondizione} non è garantita.
+\end{definition}
+
 \begin{definition}[Scenario]
     Uno \textbf{\textcolor{cyan}{scenario}} è un'istanza di un caso d'uso, ovvero una sequenza 
     di interazioni tra il sistema e gli attori che produce un risultato osservabile.
@@ -110,23 +124,46 @@ La descrizione di un caso d'uso segue questa struttura:
     alle \emph{postcondizioni}.
 \end{definition}
 
-La \emph{\textcolor{cyan}{Sequenza degli eventi principale}} elenca i passi che compongono il caso d'uso ed ogni passo presenta la
+La \emph{\textcolor{cyan}{sequenza degli eventi principale}} elenca i passi che compongono il caso d'uso ed ogni passo presenta la
 seguente sintassi:
 \begin{center}
-    \verb|<|\emph{numero}\verb|>|. \verb|<|\emph{soggetto}\verb|><|\emph{azione}\verb|><|\emph{complementi}\verb|>|
+    \verb|<numero>. <soggetto><azione><complementi>|
 \end{center}
 Il primo passo, inoltre, è sempre compiuto dall'\emph{attore principale}.
 All'interno della sequenza possono anche presenti \emph{condizioni} e \emph{cicli}, scritti in pseudocodice.
-
-%manca immagine, approfondimento hoare e liskov.
 
 \subsubsection{Inclusione}
 
 L'\emph{\textcolor{cyan}{inclusione}} permette di creare una relazione di dipendenza tra casi d'uso.
 
-È importante non usare la relazione di inclusione per fare decomposizione di un caso d'uso.
+Il caso d'uso \emph{incluso} può essere \emph{\textcolor{cyan}{istanziabile}} (o \emph{\textcolor{cyan}{completo}}),
+quando è avviato da un attore, oppure \emph{\textcolor{cyan}{non istanziabile}}, quando viene eseguito solo quando è incluso.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{img/include.png}
+    \caption{Il \emph{Caso d'uso 1} include il \emph{Caso d'uso 2}.}
+\end{figure}
+
+\paragraph{Nota Bene} È importante non usare la relazione di inclusione per fare decomposizione di un caso d'uso.
 
 \subsubsection{Estensione}
 
 L'\emph{\textcolor{cyan}{estensione}}, a differenza dell'\emph{inclusione}, non è una dipendenza, ma
 permette a un caso d'uso di incorporarne opzionalmente un altro.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{img/extend.png}
+    \caption{Il \emph{Caso d'uso 1} può essere esteso dal \emph{Caso d'uso 2}.}
+\end{figure}
+
+\paragraph{\textcolor{cyan}{Extension Points}}
+Gli \emph{extension points} sono una notazione che permette di identificare quando
+e dove inserire l'estensione. Si collega un vincolo alla freccia \verb|<<extend>>| indicando
+la condizione che deve essere vera affichè l'estensione venga applicata.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{img/extensionpoint.png}
+\end{figure}
