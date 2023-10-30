@@ -1,0 +1,151 @@
+\newpage
+
+\section{Progettazione Software}
+Questa fase risulta molto importante, in quanto si mira a realizzare un software,
+che oltre ad essere perfettamente funzionante, deve essere facilmente mantenibile e riusabile in altri sistemi.
+
+Durante la progettazione vengono assegnati i metodi alle classi e si specifica con gli oggetti devono
+interagire fra loro per realizzare i casi d'uso. In questa realizzazione si usano i diagrammi di interazione e i \emph{pattern},
+e si assegano le \emph{responsabilità} alle classi. Esistono due tipi principali di
+responsabilità, quelle di \emph{azione} che definiscono ciò che possono fare gli oggetti, e quelle di \emph{conoscenza} ovvero i dati
+a cui hanno accesso direttamente o indirettamente (tramite calcolo).
+
+È importante sottolineare che un \emph{metodo} di una classe non è una \emph{responsabilità}, ma i metodi
+vengono implementati per soddisfare le responsabilità.
+
+\subsection{Principi Generali}
+
+\subsubsection{Information Hiding}
+Consiste nel separare l'\emph{interfaccia} di un componente, che è pubblica, dalla sua \emph{implementazione},
+che rimane privata e invisibile all'esterno.
+
+\paragraph{\textcolor{cyan}{Interfaccia}} L'interfaccia esprime
+ciò che il componente offre e/o richiede all'esterno. \\ \\
+L'\emph{\textcolor{cyan}{information hiding}} permette di non comprendere necessariamente i dettagli implementativi
+di un componente per usarlo; di essere facilmente manutenibile dato che che l'implementazione di ogni componente è a compartimento
+stagno; e ovviamente garantisce maggiore sicurezza.
+
+Un esempio di \emph{information hiding}, permesso dall'\emph{incapsulamento} di molti linguaggi di programmazione
+a oggetti, è l'uso di \emph{Getters \& Setters}. Ovvero i metodi \verb|get()| e \verb|set()| permettono di nascondere
+la rappresentazione dei dati e di restituirli/modificarli effettuando dei controlli interni.
+
+Non è sempre utile il loro utilizzo in quanto se non sono necessari e vengono introdotti lo stesso
+poi occorrà mantenerli.
+
+Questa astrazione riguardante i dati, è diversa da quella che riguarda il concetto di \emph{moduli} o \emph{librerie}.
+Entrambe permettono di fare \emph{information hiding}, ma mentre quest'ultime sono puramente funzionali, l'invocazione di un'operazione
+sulle prime, invece, può comportare una variazione dello stato.
+
+\subsubsection{Coesione}
+
+È una proprietà di un compomente che consiste nel raggruppare funzionalità strettamente
+collegate fra loro, secondo diverse classificazioni:
+
+\begin{itemize}
+    \item \textcolor{cyan}{Coesione funzionale}: raggruppa parti che collaborano per realizzare
+        una singola funzionalità.
+    \item \textcolor{cyan}{Coesione comunicativa}: raggruppa parti che operano sugli stessi dati di input
+        o che collaborano agli stessi output.
+    \item \textcolor{cyan}{Coesione procedurale}: raggruppa le parti che realizzano i passi di un modulo (\emph{libreria}).
+\end{itemize}
+
+Di seguito, invece, altri tipi di coesione, ma che sono fortemente \textbf{sconsigliati}:
+\begin{itemize}
+    \item \textcolor{cyan}{Coesione temporale}: tra azioni che sono fatte nello stesso arco di tempo, ma in questo modo si và a realizzare
+        un componente che è difficilmente riutilizzabile.
+    \item \textcolor{cyan}{Coesione logica}: tra elementi che hanno una correlazione logica (per esempio nello stesso dominio) piuttosto che funzionale.
+\end{itemize}
+
+\subsubsection{Disaccoppiamento}
+
+È una proprietà di un insieme di componenti (nella maggior parte dei casi di una architettura) che vengono accoppiati
+sulla base del loro legame, come la presenza di dipendenze o se comunicano tramite uno scambio di messaggi.
+
+L'obbiettivo è di creare sistemi che siano \textbf{\textcolor{cyan}{disaccopiati}}, ovvero i cui componenti
+\textbf{non} siano fortemente legati fra loro. \\
+
+L'ideale sarebbe creare sistemi che esibiscano un \textbf{alto} grado di \textbf{coesione} e uno \textbf{basso} di
+\textbf{disaccoppiamento}.
+
+\subsection{SOLID}
+
+\textbf{\textcolor{cyan}{SOLID}} definisce cinque principi base di progettazione (di dettaglio) che si applicano
+alla programmazione \emph{object-oriented}:
+
+\begin{itemize}
+    \item \textbf{\textcolor{cyan}{S} ingle Responsibility Principle}: Una classe dovrebbe avere solo un motivo per cambiare (cioè una sola responsabilità), quindi nel caso individuamo due responsabilità
+        occorre dividere la classe in due classi. Questo perchè se la classe ha più responsabilità, le modifiche potrebbere
+        coinvolgere altre funzionalità della classe e i moduli che le usano. Tutto questo sta a significare che la classe deve implementare una singola funzionalità.
+        L'unica eccezione alla regola si presenta quando non si può cambiare una delle due responsabilità senza cambiare contestualmente anche l'altra.
+    \item \textbf{\textcolor{cyan}{O} pen Closed Principle}: Le entità software, come classi o moduli, devono poter essere \textbf{aperte} per essere \textbf{estese}, ma \textbf{chiuse} per essere \textbf{modificate}.
+        Un esempio può essere l'uso di \emph{classi astratte} e del principio di \emph{ereditarietà} per poter estendere classi già esistenti senza cambiarle.
+    \item \textbf{\textcolor{cyan}{L} iskov Substitution Principle}: Questo Principio di Sostituzione definisce che se una classe $S$ è sottotipo di una classe $T$, allora per ogni
+        oggetto $o_1$ di $S$ esiste un oggetto $o_2$ di $T$ tale che per ogni programma $P$ definito su $T$, il suo comportamento è
+        immutato quando $o_1$ è usato al posto di $o_2$.
+    \item \textbf{\textcolor{cyan}{I} nterface Segregation Principle}: Si preferisce costruire interfacce che siano a grana fine e specifiche per ogni \emph{client},
+        cioè un \emph{client} non deve dipendere da interfacce di cui non usa tutti i metodi.
+    \item \textbf{\textcolor{cyan}{D} ependency Inversion Principle}: Un modulo non deve dipendere da implementazioni concrete di una classe, ma da una sua astrazione, in questo modo sarà più facile
+        estendere le sue funzionalità. Questo principio garantisce il \emph{\textcolor{cyan}{disaccoppiamento}}, in quanto il \emph{modulo} dipenderà solo dall'interfaccia senza sapere como sono costruiti i suoi servizi.
+\end{itemize}
+
+\subsection{GRASP}
+
+\textcolor{cyan}{General Responsibility Assignment Software Patterns} è un'altra famiglia di
+principi di progettazione che si basa sull'assegnazione delle responsabilità. Si definiscono prima gli oggetti e i loro metodi,
+e ci si fà guidare da \emph{pattern} (schemi) di assegnazione delle responsabilità.
+
+\subsection{Qualità del Software}
+
+Il modello di qualità del prodotto \textbf{\textcolor{cyan}{ISO/IEC 25010}} è composto da 8 caratteristiche:
+\begin{itemize}
+    \item \textcolor{cyan}{Adeguatezza funzionale}: rappresenta la misura che definisce se un sistema
+        fornisce funzioni che soddisfano le esigenze dichiarate precedentemente.
+    \item \textcolor{cyan}{Efficienza delle prestazioni}: rappresenta le prestazioni relative alla quantità di risorse che
+        vengono utilizzate e ai tempi di risposta.
+    \item \textcolor{cyan}{Compatibilità}: misura in cui un sistema o componente può scambiare informazioni
+        con altri sistemi o componenti e/o nel caso viene eseguito nello stesso ambiente hardware dell'altro software/componente condividendo le stesse risorse.
+    \item \textcolor{cyan}{Usabilità}: misura in cui un sistema può essere usato dagli utenti specificati in precedenza in fase di analisi, in modo che possa soddisfare i loro bisogni. Misura anche se il sistema è
+        semplice da imparare ad usare e la qualità dell'interfaccia utente.
+    \item \textcolor{cyan}{Affidabilità}: misura in cui si analizza il comportamento del sistema in condizioni normali e in condizioni
+        con presenza di guasti hardware e/o software. Inoltre misura anche la possibilità di recuperare dati e di ristabilire lo stato precendente in caso di guasti.
+    \item \textcolor{cyan}{Sicurezza}: misura in cui il sistema protegge le informazioni e i dati e dia il giusto grado di accesso in base al livello di autorizzazione
+        dell'utente. Valuta anche se ogni azione può essere ricondotta in modo univoco a chi l'ha compiuta.
+    \item \textcolor{cyan}{Manutenibilità}: misura che definisce l'efficienza con cui un sistema può essere migliorato o corretto.
+        È garantita dalla \emph{modularità} del sistema.
+    \item \textcolor{cyan}{Portabilità}: misura l'efficacia con cui un software può essere trasferito da un ambiente a un altro, e quanto
+        può essere efficace nella sostituzione di un altro software che si occupa dello stesso scopo.
+\end{itemize}
+
+\subsection{Stili dell'Architettura}
+
+\begin{definition}[Scalabilità]
+    La \textbf{\textcolor{cyan}{scalabilità}} di un software è definita come la sua capacità di aumentare
+    il proprio \emph{throughput} in proporzione all'aumento dell'hardware utilizzato.
+\end{definition}
+
+\begin{definition}[Scalabilità Verticale]
+    La \textbf{\textcolor{cyan}{scalabilità verticale}} si riferisce all'aggiunta di memoria e CPU su un singolo nodo (\emph{host}). Ideale per i \emph{database}.
+\end{definition}
+
+\begin{definition}[Scalabilità Orizzontale]
+    La \textbf{\textcolor{cyan}{scalabilità orizzontale}} si riferisce all'aggiunta di più nodi hardware. È ideale per le applicazioni web che condividono poca memoria
+    e presentano tanti \emph{thread} indipendenti.
+\end{definition}
+
+Le architetture viste in precedenza presentano diverse caratteristiche sulla \emph{qualità del software}:
+\begin{itemize}
+    \item \textcolor{cyan}{Client-Server} e \textcolor{cyan}{2} o \textcolor{cyan}{N-tier}: presenta una grande \emph{disponibilità} e \emph{fault tolerance} in quanto
+        se un server non è disponibile si reindirizza la richiesta ad un altro server. Presenta anche un'alta
+        \textcolor{cyan}{modificabilità}, ovvero la misura in cui il sistema può essere modificato senza introdurre difetti o degradare la qualità, grazie all'elevata \emph{coesione}
+        e \emph{disaccoppiamento}. Anche La scalabilità è elevata, ma può presentare un collo di bottiglia per via dei database se si scala orizzontalmente.
+    \item \textcolor{cyan}{Pipes \& Filters}: per la \emph{fault tolerance} occorre aspettare la riparazione del componente che rompe la catena. La \emph{modificabilità} e
+        la \emph{scalabilità} sono alte.
+    \item \textcolor{cyan}{Publish-Subscribe}: la \emph{fault tolerance} può essere aggirata introducendo un maggior numero di
+        \emph{dispatcher} (anche chiamati \emph{broker}). Anche qui la \emph{modificabilità} e la \emph{scalabilità} vanno bene, quest'ultima
+        se si utilizza sempre un grande numero di \emph{dispatcher}.
+    \item \textcolor{cyan}{P2P}: la \emph{fault tolerance} e la \emph{scalabilità} ovviamente sono sempre garantite dato che tutti i nodi sono alla pari. La \emph{modificabilità}
+        và bene se l'architettura si occupa solo della parte di comunicazione; e la \emph{performance} dipende dal numeri di nodi connessi e dagli algoritmi utilizzati.
+    \item \textcolor{cyan}{Coordinatore di Processi}: per avere maggiore \emph{fault tolerance} e \emph{scalabilità} occorre replicare tante volte il \emph{coordinatore}. Per la \emph{modificabilità} si possono
+        aggiornare i \emph{server} se non cambiano le funzionalità che sono esportate. Le \emph{performance} sono alte se il coordinatore riesce a gestire più richieste in modo concorrente e sono
+        influenzate anche dal server più lento.
+\end{itemize}
