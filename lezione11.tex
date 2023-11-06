@@ -1,0 +1,52 @@
+\subsection{Design Pattern}
+
+I \textbf{\textcolor{cyan}{design pattern}} sono una serie di regole pratiche, 
+definite molte volte grazie a secoli di esperienza, che il progettista deve seguire.
+
+Gli autori chiamati \emph{Gang of Four} hanno definito 23 design pattern che sono suddivisi
+in base al loro scopo:
+\begin{itemize}
+    \item \textcolor{cyan}{Creazionali}: propongono soluzioni per la creazione di oggetti.
+    \item \textcolor{cyan}{Comportamentali}: soluzioni per gestire al meglio la suddivisione
+        di responsabilità fra classi o oggetti.
+    \item \textcolor{cyan}{Strutturali}: soluzioni per come devono essere composte le classi o gli oggetti.
+\end{itemize}
+
+I livelli di astrazione nella costruzione di un \emph{pattern} possono essere diversi, si può realizzare
+un design \emph{ad hoc} per un'applicazione o per un sottosistema, quindi lavorando ad un livello molto alto di astrazione,
+oppure si possono cercare soluzioni per un generico problema di design nel contesto di lavoro, fino ad arrivare ad un
+livello più concreto (di codice), per realizzare \emph{pattern} semplici e riusabili.
+
+\subsubsection{Strategy}
+
+Questo \emph{design pattern} si basa sul favorire la composizione tramite la definizione
+di \emph{interfacce}, preferite rispetto all'\emph{ereditarietà}. Quindi in primo luogo
+si identifica una famiglia di algoritmi e ognuno di essi viene incapsulato in un'interfaccia.
+In questo modo si potranno alterare ed estendere le parti che variano rispetto a quelle che non lo fanno. \\
+
+I \textcolor{cyan}{partecipanti} in questo pattern sono:
+\begin{itemize}
+    \item \textcolor{cyan}{Strategy}: rappresenta una famiglia di algoritmi, e quindi definisce
+        un'interfaccia comune ad essi.
+    \item \textcolor{cyan}{Concrete Strategy}: implementa un algoritmo.
+    \item \textcolor{cyan}{Context}: contiene un riferimento ad un'istanza di tipo \emph{Strategy}, può definire
+        un'interfaccia che consenta alla \emph{Strategy} di accedere ai propri dati, oppure può passarglieli come argomenti
+        quando viene invocato un suo metodo.
+\end{itemize}
+
+\paragraph{\textcolor{cyan}{Applicabilità}} Si utilizza questo modello quando sono presenti
+molte classi simili che differiscono solo nel comportamento; quando ci sono diversi
+varianti di un algoritmo e quando l'algortimo utilizza dati che non devono essere a conoscenza
+del contesto; e quando si vuole evitare di esporre le strutture dati utilizzate.
+
+I benefici principali di questo modello sono che elimina molte istruzioni condizionali
+di grandi dimensioni all'interno della classe \emph{Context} e che fornisce proprio un'alternativa
+alla formazione di gerarchie nel \emph{Context}, preferendo l'implementazione esplicita di algoritmi
+e funzionalità. Gli svantaggi principali invece sono l'aumento del numero di oggetti e che tutti gli 
+algoritmi devono utilizzare la stessa interfaccia \emph{Strategy}.
+
+Il caso in cui, invece, l'utilizzo di questo modello è sconsigliato è quando
+diverse \emph{Concrete Strategy} richiedono dati diversi: se questi vengono passati all'interfaccia generica
+(\emph{Strategy}) c'è una grande probabilità che non tutte le \emph{Concrete Strategy} li utilizzeranno. Una possibile
+soluzione è il rafforzamento del legame tra il \emph{Context} e le \emph{Concrete Strategy}, in modo tale che quest'ultime
+possano richiede dati al primo.
