@@ -1,0 +1,17 @@
+\subsubsection{State}
+
+È un pattern comportamentale, che consente ad un oggetto di modificare
+il suo comportamento quando il suo stato interno cambia.
+
+I partecipanti sono:
+\begin{itemize}
+    \item \textcolor{cyan}{Context}: rappresenta l'interfaccia che utilizza l'utente e 
+        mantiene un'istanza di \emph{Concrete State} che rappresenta lo stato corrente.
+    \item \textcolor{cyan}{State}: definisce l'interfaccia degli stati; può anche essere
+        una classe concreta o astratta nel caso ci sono comportamenti comuni che non dipendono dallo stato,
+        o nel caso si vogliono definire comportamenti di \emph{default}.
+    \item \textcolor{cyan}{Concrete State}: è una sottoclasse di \emph{State} che implementa un
+        singolo stato. Generalmente sono i \emph{Concrete State} ad effettuare la transizione di stato,
+        dato che conoscono il loro \emph{next state}, ma nei casi più semplici si può cambiare stato anche nel
+        \emph{Context}.
+\end{itemize}
