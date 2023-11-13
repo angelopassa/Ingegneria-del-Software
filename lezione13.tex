@@ -1,0 +1,99 @@
+\subsubsection{Factories}
+
+Una \textbf{\textcolor{cyan}{Factory}} è una classe il cui compito
+è quello di creare e restituire istanze di altre classi.
+
+In questo modo viene nascosta, e resa più semplice, la costruzione degli oggetti,
+senza dover invocare ogni volta il proprio \emph{costruttore}.
+
+Infatti, ogni volta che viene utilizzato il comando \verb|new|, viene violato il
+principio di progettazione di scrivere codice basandosi esclusivamente sulle \emph{interfacce}, 
+dato che possiamo associare come istanza di una classe una sua sottoclasse (per il \emph{Principio di Sostituzione di Liskov}).
+
+Inoltre, se abbiamo un frammento di codice che restituisce un'istanza di classe
+diversa in base al valore di determinate variabili, allora potrebbero venire violati
+i principi di \emph{Open-Closed} e di \emph{Information Hiding}, dato che ogni volta che si
+aggiunge o rimuove una classe, occorre anche modificare questo pezzo di codice.
+
+Di seguito vengono trattate le tre tipologie di pattern \emph{\textcolor{cyan}{factories}}.
+
+\paragraph{\textcolor{cyan}{Simple Factory}} Quando si vuole implementare
+una logica di creazione di un oggetto molto complessa e la si vuole separare dalle
+sue funzionalità, allora si delega la creazione a un oggetto chiamato \textbf{\textcolor{cyan}{factory}}.
+
+Quindi, praticamente, viene spostata la logica di creazione dell'oggetto in un metodo della classe
+\emph{Factory}, e in questo modo occorrerà solo invocare questo metodo all'esterno per ottenere un'istanza.
+Così se dovesse cambiare il modo in cui creaiamo gli oggetti, non servirà apportare modifiche all'esterno, ma solo
+nella \emph{Factory}.
+
+\paragraph{\textcolor{cyan}{Factory Method}} Questo pattern si focalizza sull'uso dell'ereditarietà
+per decidere quale oggetto deve essere istanziato.
+
+I partecipanti sono:
+\begin{itemize}
+    \item \textcolor{cyan}{Product}: definisce l'interfaccia per il tipo
+        di oggetti che il \emph{factory method} crea.
+    \item \textcolor{cyan}{Concrete Product}: implementa l'interfaccia \emph{Product}.
+    \item \textcolor{cyan}{Creator}: dichiara il \emph{factory method} e restituisce un oggetto
+        di tipo \emph{Product}.
+    \item \textcolor{cyan}{Concrete Creator}: sovrascrive il \emph{factory method} per restituire un'istanza
+        di \emph{Concrete Product}.
+\end{itemize}
+
+Si usa questo pattern solo se una classe non può prevedere la classe di oggetti che deve creare,
+o se una classe richiede delle sottoclassi per specificare gli oggetti da creare.
+
+Ovviamente i benefici solo la grande flessibilità e la riusabilità di questo pattern, ed inoltre dall'esterno
+è necessario interfacciarsi solo con la classe \emph{Product}. Gli svantaggi sono che ogni volta che vogliamo
+istanziare uno specifico \emph{Concrete Product} occorre creare una sottoclasse di \emph{Creator}. Il \emph{Creator} inoltre
+può essere sia astratto che concreto (nel caso si voglia implementare un \emph{factory method}) di default.
+
+\paragraph{\textcolor{cyan}{Abstract Factory}} È una generalizzazione del pattern \emph{Simple Factory}, e la differenza principale col
+\emph{Factory Method}, è che mentre lì si utilizza l'ereditarietà basandosi su una sottoclasse che gestisce l'istanzazione di un oggetto,
+nell'\emph{Abstract Factory}, una classe delega la responsabilità di creazione di un oggetto a un altro oggetto tramite
+la composizione. In realtà, l'oggetto delegato per la creazione, potrebbe utilizzare dei \emph{factory method} per eseguire l'istanzazione, quindi
+applicando entrambi i pattern. \\
+
+I \textbf{\textcolor{cyan}{Pure Fabrication}} sono un pattern \emph{GRASP} che si pone l'obbiettivo
+di non violare l'\emph{alta coesione} e il \emph{basso accoppiamento}. Questo viene realizzato
+assegnando un insieme di responsabilità molto coese fra loro ad una classe artificiale che non rappresenta
+niente nel dominio del problema, di conseguenza avremo implementato che il \emph{basso accoppiamento} che favorisce
+il riutilizzo.
+La progettazione di oggetti può essere partizionata in due gruppi, quelli decomposti sulla rappresentazione, e quelli decomposti
+sul comportamento. L'ultimo gruppo non rappresenta proprio niente nel dominio del problema e sono solo costruiti per convenienza
+del programmatore, da qui il nome \emph{Pure Fabrication}.
+
+Una \emph{\textcolor{cyan}{Factory}} è un \emph{\textcolor{cyan}{Pure Fabrication}} che ha l'obbiettivo di confinare ed incapsulare
+la logica di creazione, soprattutto quand'è abbastanza complessa.
+
+\subsubsection{Singleton}
+
+Questo pattern è utile quando si vuole che un metodo abbia una sola istanza e si vuole
+fornire un punto di accesso globale ad essa. Per prevenire le multiple istanze, si crea un'istanza
+della classe all'interno della stessa con accesso privato e statica; successivamente si realizza un metodo
+pubblico che permette di rendere disponibile l'istanza.
+
+Inoltre si preferisce usare una \emph{Lazy Initialization} dell'istanza, ovvero quando il metodo
+pubblico è invocato, se l'istanza non è stata creata si crea e si restituisce, altrimenti si restituisce solo.
+Infatti la creazione dell'istanza potrebbe richiedere dei parametri oppure semplicemente è troppo pesante e non avrebbe senso
+crearla prima che venga usata o se non verrebbe usata proprio. \\
+
+Il problema si crea quando si lavora in un ambiente \emph{multi-thread}
+per colpa delle \emph{race condition}. Una soluzione potrebbe essere quella di sincronizzare
+il metodo che restituisce l'istanza, ma sarebbe troppo dispendioso dato che la creazione
+dell'istanza avviene solo una volta. In alternativa si può usare un \verb|double-checked-locking|.
+
+Consiste nel dichiarare l'istanza di tipo \verb|volatile| ovvero viene garantito che quando leggiamo il valore
+da questa variabile si legge sempre l'ultimo scritto. In seguito nel metodo che restituisce
+l'istanza si fà prima un controllo se l'istanza è diversa da \verb|NULL|, successivamente si crea un blocco
+\verb|synchronized| che garantisce la \emph{mutua esclusione} sull'intera classe, e al cui interno prima di istanziare
+l'oggetto si fà un altro controllo se l'istanza corrente è \verb|NULL| (dato che il controllo precendente non era mutualmente esclusivo).
+
+Se si vogliono creare delle sottoclassi utilizzando \emph{Singleton}, quindi mantenendo sempre una sola istanza, si può fare
+in due modi, o nel metodo della superclasse determinare il tipo dell'istanza da creare attraverso un paramtro passato come argomento, anche se in questo
+caso non è garantito che i costruttori delle sottoclassi siano privati e in questo caso si potranno istanziare più oggetti delle sottoclassi (inoltre viene anche violato il principio di \emph{Open-Closed} come visto prima);
+oppure il modo migliore è quello di spostare il metodo che restituisce l'istanza in ogni sottoclasse.
+
+Tuttavia i vantaggi di usare \emph{Singleton} piuttosto che una \emph{classe statica}, sono
+la possibilità di passare l'istanza unica come parametro in un altro metodo, e di poter utilizzare
+i \emph{factory} pattern per costruire l'istanza.
