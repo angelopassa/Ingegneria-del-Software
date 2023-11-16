@@ -1,0 +1,111 @@
+\subsubsection{Adapter}
+
+Gli \textbf{\textcolor{cyan}{adapter}} sono utili
+quando vogliamo interagire con un'interfaccia che non
+è omogenea a quella utilizzata dal \emph{client}.
+
+Questo pattern permette di convertire l'interfaccia di una classe
+in un'altra interfaccia che è compatibile con quella utilizzata dal \emph{client}.
+
+Si usa la \emph{\textcolor{cyan}{delegazione}} per associare un interfaccia
+\emph{adapter} ad una \emph{adattata}.
+
+I \textcolor{cyan}{partecipanti} sono:
+\begin{itemize}
+    \item \textcolor{cyan}{Target}: l'interfaccia che il \emph{client} usa.
+    \item \textcolor{cyan}{Client}: utilizza oggetti che siano conformi all'interfaccia \emph{Target}.
+    \item \textcolor{cyan}{Adaptee}: definisce un'interfaccia già esistente che necessita di essere adattata.
+    \item \textcolor{cyan}{Adapter}: adatta l'interfaccia \emph{Adaptee} all'interfaccia \emph{Target}.
+\end{itemize}
+
+L'\emph{Adapter} può anche ricoprire il ruolo di \emph{Concrete Strategy}
+nello \emph{Strategy} pattern. In questo modo implementiamo la possibilità di cambiare
+gli oggetti \emph{Adapter} a runtime.
+
+\subsubsection{Proxy}
+
+Questo pattern fornisce un surrogato per un altro oggetto, ovvero lo sostituisce
+in modo da controllare l'accesso alle sue funzionalità. Può sembrare simile
+ad \emph{\textcolor{cyan}{Adapter}} ma, a differenza di questo, il \textbf{\textcolor{cyan}{Proxy}}
+può eseguire pre e post-elaborazioni, inoltre esso e l'oggetto originale hanno la stessa interfaccia.
+
+Esistono vari tipi di \textcolor{cyan}{Proxy}:
+\begin{itemize}
+    \item \textcolor{cyan}{Remote Proxy}: permette l'accesso ad un oggetto remoto.
+        Nello specifico il \emph{Proxy} si comporta come una rappresentazione locale di un oggetto
+        che risiede in un'altra \emph{Java Virtual Machine}. Il client invoca un
+        metodo del \emph{Proxy} che lo inoltra tramite la rete all'oggetto reale, una volta ricevuta la risposta, il
+        \emph{Proxy} la restituisce al \emph{client}.
+
+        Inoltre è anche possibile introdurre un altro \emph{Proxy} lato server,
+        a questo punto, quello lato client lo chiameremo \emph{Client Helper}, mentre
+        il proxy lato server sarà il \emph{Service Helper}. I due proxy hanno
+        ovviamente la stessa interfaccia, che è la stessa dell'oggetto reale, il \emph{Service Helper}
+        in particolare aggiunge un altro \emph{layer} di operazioni, spacchettando la richiesta
+        del \emph{Client Helper} ed invocando i metodi opportuni dell'oggetto reale. Al contrario,
+        il \emph{Service Helper} impacchetta il risultato del metodo e lo spedisce al \emph{Client Helper}
+        che una volta ricevuto, lo spacchetterà e lo darà al \emph{client}.
+
+        Nel \emph{Remote Method Invocation} di Java, il \emph{Client Helper} è chiamato
+        \emph{Stub}, mentre il \emph{Service Helper} è lo \emph{Skeleton}. L'unica differenza col
+        metodo precendente è che qui lato client non possediamo già lo \emph{Stub}, quindi
+        il \emph{client} deve prima effettuare una richiesta di \verb|lookup()| nell'\emph{RMI Registry} al server che gli restituirà
+        l'oggetto \emph{Stub} per il servizio richiesto, che potrà essere utilizzato per effettuare le richieste al server.
+    \item \textcolor{cyan}{Protection Proxy}: implementa un controllo sugli accessi.
+    \item \textcolor{cyan}{Cache Proxy}: mantiene coppie del tipo \verb|richiesta-risposta| sgravando
+        il \emph{server} di questa responsabilità.
+    \item \textcolor{cyan}{Synchronization Proxy}: gestisce gli accessi concorrenti.
+    \item \textcolor{cyan}{Virtual Proxy}: si comporta come l'oggetto originale, mentre quest'ultimo viene
+        costruito. Viene utilizzato principalmente quando per l'appunto l'oggetto reale
+        richiede costi di creazione molto elevati. Una volta terminata la creazione, il \emph{Virtual Proxy}
+        delegherà le richieste all'oggetto originale.
+\end{itemize}
+
+\subsubsection{Decorator}
+
+Questo pattern si usa per evitare di creare un'interfaccia
+che abbia un numero troppo elevato di classi che la implementano.
+Una prima soluzione sarebbe quella di avere una serie di valori booleani
+nella superclasse che indicano se l'oggetto presenta o no delle determinate caratteristiche, in questo modo eliminiamo un po' di sottoclassi inutili
+e manteniamo solo quelle principali. Ovviamente anche questa soluzione
+è errata, dato che nel caso si vuole aggiungere o rimuovere una caratteristica
+si andrebbe a violare il principio \emph{Open-Closed}.
+
+Questo pattern ci viene incontro offrendo una soluzione: l'idea è quella di trasformare
+quelle caratteristiche che erano sotto forma di valori booleani, in classi, a questo punto se vogliamo
+aggiungere una caratteristica al nostro oggetto basta \emph{"wrapparla"} all'interno della caratteristica che avevamo già,
+e così via fino a quando non arriviamo ad una foglia, rappresentata da una delle classi che avevamo indicato come principali.
+
+I partecipanti sono i seguenti:
+\begin{itemize}
+    \item \textcolor{cyan}{Component}: è l'interfaccia generale di tutti gli altri oggetti di questo pattern.
+    \item \textcolor{cyan}{Concrete Component}: la classe \emph{"foglia"} di oggetti che ricevono nuove caratteristiche.
+    \item \textcolor{cyan}{Decorator}: definisce un'interfaccia che estende \emph{Component}, in più mantiene un riferimento
+        ad un altro oggetto di tipo \emph{Component}.
+    \item \textcolor{cyan}{Concrete Decorator}: definisce una caratteristica.
+\end{itemize}
+
+Nonostante viene usata l'ereditarietà tra \emph{Decorator} e \emph{Component}, questa non viene utilizzata per aggiungere nuove
+funzionalità, ma per avere un \emph{type matching} tra i \emph{Decorator} e gli oggetti
+che vanno a \emph{"decorare"}. Infatti l'aggiunta di nuove funzionalità avviene non grazie
+all'ereditarietà, ma per merito della composizione che ci permette di aggiungere
+\emph{Decorator} a \emph{runtime}.
+
+Questo pattern è molto utile perchè ci permette anche di attaccare ad un
+oggetto la stessa caratteristica più di una volta.
+
+Questo pattern può presentare alcuni problemi, ad esempio l'interfaccia
+di un oggetto \emph{Decorator} deve essere uguale all'interfaccia dell'oggetto che và
+a decorare. Inoltre se l'interfaccia \emph{Decorator} implementa una sola caratteristica, l'interfaccia
+stessa và omessa e si accorpora la caratteristica direttamente in \emph{Concrete Decorator}. Dato
+che la classe \emph{Component} è ereditata da componenti e decoratori è necessario
+cercare di mantenerla il più leggera e semplice possibile; dato che se è complessa di conseguenza
+sarà complessa anche la classe \emph{Decorator} che diventa costosa da usare in grandi
+quantità. Un'altra limitazione, è che occorre usare questo pattern solo se si vuole aggiungere uno
+strato all'oggetto e non si vuole modificarlo, in quel caso và usato il pattern \emph{Strategy}.
+
+Ad esempio a differenza di \emph{Strategy} in \emph{Decorator} possiamo solo aggiungere
+caratteristiche dinamicamente ad un oggetto, mentre nel primo possiamo anche modificarle.
+D'altro canto in \emph{Strategy} quando modifichiamo la \emph{Concrete Strategy} di un oggetto
+si và a modificare l'oggetto stesso, che è a conoscenza anche delle funzionalità
+che gli sono state aggiunte, e non sempre questa è una cosa desiderata. 
