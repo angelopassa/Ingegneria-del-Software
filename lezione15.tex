@@ -1,0 +1,181 @@
+\section{Verifica e Validazione}
+
+Come dimostrato da Alan Turing nel 1937, non esiste
+alcun programma $P$ che prende in input altri programmi e che
+per ogni programma preso in input decide in tempo finito se termina,
+e tantomeno se è corretto.
+
+Quindi non è facile effettuare verifiche sul corretto funzionamento di un programma.
+
+Ci sono anche alcune caratteristiche che rendono questo processo particolarmente
+difficile, come il fatto che sia sempre in evoluzione, la distribuzione
+irregolare dei guasti e soprattutto la non linearità, ad esempio se
+abbiamo verificato che un programma funziona correttamente con input
+\verb|x = 100|, non è detto che vada bene anche per valori inferiori a \verb|x|.
+
+Alcuni errori, possono dipendere soprattutto dal linguaggio utilizzato,
+come ad esempio la presenza di \emph{deadlock} o \emph{race condition} o
+dei problemi dovuti al polimorfismo ed ereditarietà nei linguaggi \emph{object-oriented}.
+
+La fase di testing non è la parte finale del processo di sviluppo di un software,
+ma inizia non appena si decide di creare il prodotto e dura anche molto oltre la consegna
+di esso, ovvero per il tutto il tempo che il software è in uso.
+
+Per capire se un prodotto è pronto per il rilascio, ci sono alcune misure di \emph{\textcolor{cyan}{dependability}}
+che aiutano a capirlo:
+\begin{itemize}
+    \item La \textcolor{cyan}{Disponibilità}: misura la qualità del software
+        sulla base del tempo in cui il sistema è in esecuzione rispetto al tempo
+        in cui il sistema è \emph{down}.
+    \item Il \textcolor{cyan}{Tempo Medio tra i Guasti}: misura la qualità in termini di
+        tempo tra un guasto e il successivo.
+    \item L'\textcolor{cyan}{Affidabilità}: indica la percentuale di operazioni che terminano
+        con successo.
+\end{itemize}
+
+Inoltre i test eseguiti possono essere suddivisi in due categorie:
+\begin{itemize}
+    \item Gli \textcolor{cyan}{Alpha Test}: sono eseguiti dagli sviluppatori
+        o da utenti che comunque sono in un ambiente controllato dal produttore
+        del software.
+    \item I \textcolor{cyan}{Beta Test}: sono i test eseguiti da utenti nel loro
+        ambiente, eseguendo operazioni senza essere monitorati.
+\end{itemize}
+
+Mentre la \textbf{\textcolor{cyan}{Validazione}} si pone l'obbiettivo di affermare
+che si sta costruendo il sistema di cui l'utente necessita; la \textbf{\textcolor{cyan}{Verifica}},
+invece, vuole constatare che il sistema rispetti le specifiche. Si può
+dire che il processo di \emph{verifica} è intrinseco a quello di \emph{validazione}.
+
+Un'altra distinzione importante è tra \textbf{\textcolor{cyan}{Malfunzionamento}}
+e \textbf{\textcolor{cyan}{Difetto}}. Il \emph{malfunzionamento} ha una natura dinamica
+ovvero può essere osservato solo a tempo di esecuzione e si verifica quando il sistema non
+si comporta secondo le specifiche. Il \emph{difetto}, invece, si intende come difetto nel
+codice ed è quello che causa il malfunzionamento, ma non sempre, in questo caso si parla
+di \emph{\textcolor{cyan}{difetto latente}}, quando il suo effetto è nullo oppure è
+contenuto in un cammino mai percorso nei test.
+L'\textbf{\textcolor{cyan}{Errore}}, invece, è l'incomprensione umana che ha causato
+il \emph{difetto}.
+
+Come detto all'inizio, il \emph{Testing} è sottoposto al problema
+dell'indecidibilità, ovvero effettuare un \emph{\textcolor{cyan}{testing esaustivo}}
+su ogni possibile input richiederebbe tempo infinito (se il dominio degli input è anch'esso infinito).
+
+\begin{definition}[Tesi di Dijkstra]
+    Il test di un programma può rilevare la presenza di difetti ma non
+    dimostrarne l'assenza.
+\end{definition}
+
+\subsection{Verifica Statica}
+
+Non prevede l'esecuzione del programma, utilizzando \emph{\textcolor{cyan}{metodi manuali}} come
+la lettura del codice (\emph{desk-check}), oppure \emph{\textcolor{cyan}{metodi formali}} come l'analisi
+statica.
+
+Ci sono due metodi pratici di \emph{desk-check}:
+\begin{itemize}
+    \item \textcolor{cyan}{Inspection}: si esegue una lettura mirata del codice,
+        guidata da una lista di controllo con l'obbiettivo di rilevare la presenza di
+        difetti. Si focalizza la ricerca su aspetti già ben definiti effettuando
+        un \emph{"error guessing"}. Questa attività è svolta da dei verificatori diversi
+        dai programmatori. Le liste di controllo sono frutto di esperienza e contengono
+        tipicamente aspetti che non possono essere controllati in modo automatica. Le liste
+        sono aggiornate ad ogni iterazione di \emph{Inspection}. Si possono vedere come delle
+        linee guida e buone pratiche che permettono di evitare parecchie ore di testing.
+    \item \textcolor{cyan}{Walkthrough}: si basa su una lettura critica del codice che consiste
+        nel percorrere il codice simulandone l'esecuzione. È svolto sia dai programmatori che dai
+        verificatori. Mentre \emph{Inspection} è basato sulla rilevazione di errori presupposti,
+        \emph{Walkthrough} è molto più completo ma è meno rapido.
+\end{itemize}
+
+I vantaggi della verifica manuale solo la praticità, l'intuitività e la
+convenienza economica, dato che dipendono solo dalla lunghezza del codice. \\
+
+I \textbf{\textcolor{cyan}{Metodi Formali}}, invece sono basati
+sulla dimostrazione formale di correttezza di un modello finito; quindi
+dimostrare corretto il modello garantisce anche la correttezza di una sua istanza.
+
+\subsection{Verifica Dinamica}
+
+Una caratteristica della \emph{verifica dinamica} è la ripetibilità delle prove, ovvero
+bisogna poter ripetere una sessione di test in condizioni immutate.
+
+\subsubsection{Progettazione Casi di Test}
+
+Un \textbf{\textcolor{cyan}{caso di prova}} o \emph{test case} è una tripla
+del tipo \verb|<input, output (atteso), ambiente>|.
+
+La \textbf{\textcolor{cyan}{test obligation}} è una specifica o proprietà che i casi
+di prova devono soddisfare. Un insieme di \emph{test obligation} è un \textcolor{cyan}{criterio di adeguatezza}.
+
+Un insieme di casi di prova, chiamato \textbf{\textcolor{cyan}{batteria di prove}} soddisfa un \emph{criterio di adeguatezza} se tutti i test
+hanno successo e ogni \emph{test obligation} è soddisfatta da almeno un caso di test.
+
+Le \emph{test obligation} possono essere di quattro tipi:
+\begin{itemize}
+    \item \textcolor{cyan}{Black Box}: a scatola chiusa, ovvero si guardano le specifiche del software e ci
+        si basa sulla conoscenza delle funzionalità.
+    \item \textcolor{cyan}{White Box}: a scatola aperta, si guarda la struttura del codice.
+    \item Definiti guardando i modelli utilizzati nella fase di specifica o di progettazione
+        o derivati dal codice.
+    \item Definiti da \emph{fault ipotetici}, ovvero si cercano dei difetti abbastanza comuni.
+\end{itemize}
+
+Una \textbf{\textcolor{cyan}{procedura di prova}}, invece, serve
+per eseguire, registrare e analizzare i risultati di una \emph{batteria di prove}.
+
+La realizzazione dell'\emph{ambiente di prova} si chiama \textcolor{cyan}{test scaffolding} e
+rappresenta del codice aggiuntivo per eseguire dei test. Può includere:
+\begin{itemize}
+    \item \textcolor{cyan}{Driver di Test}: sostituiscono un programma principale o di chiamata.
+    \item \textcolor{cyan}{Stub}: sostituiscono funzionalità chiamate e utilizzate dal software in prova.
+    \item \textcolor{cyan}{Test Harness}: sostituiscono delle parti dell'ambiente di distribuzione.
+    \item Tool per gestire l'esecuzione del test.
+    \item Tool per registrare i risultati.
+\end{itemize}
+
+\paragraph{\textcolor{cyan}{Metodi Black Box per Generare Input}} Per ogni funzionalità si deriva
+un insieme di casi di test. Per ogni tipo di input si individuano dei valori da testare e per l'insieme
+dei parametri della funzionalità si utilizzano delle tecniche di \emph{testing combinatorio} per ridurre
+le combinazioni.
+
+Il \textcolor{cyan}{metodo statistico} permette di selezionare i test case in base
+alla distribuzione di probabilità dei dati di ingresso del programma. Quindi
+si progetta il test per eseguire il programma sui valori di ingresso più probabili, lo svantaggio
+è che questo potrebbe non corrispondere alle effettive condizioni di utilizzo del software e potrebbe
+essere oneroso calcolare l'output atteso.
+
+Il dominio dei dati di input viene partizionato in \emph{classi di equivalenza}. Due input
+appartengono alla stessa classe di equivalenza se dovrebbero produrre lo stesso comportamento,
+ma non necessariamente lo stesso output. Questo criterio è valido per tutti quei
+programmi in cui il numero dei possibili comportamenti è inferiore rispetto al numero
+delle possibile configurazioni dell'input.
+
+Molte volte si cerca anche di testare il programma sui \emph{valori limite} (o di frontiera),
+come ad esempio gli estremi delle classi di equivalenza. Si guardano spesso gli intorni
+dei valori limite perchè spesso è lì che si nascondono i difetti del codice.
+
+Per ogni input si definiscono anche i \emph{casi non validi}, ovvero quelli che devono
+generare un errore. \\
+
+Il \textcolor{cyan}{metodo random}, invece, permette di generare in modo automatico un insieme
+grande di valori; la generazione costa zero, ma dato che viene generato casualmente non può
+essere ripetibile. È applicabile se costa poco l'esecuzione.
+
+Un test può anche essere basato su un \emph{catalogo}, ovvero raccogliere tutti
+i casi di test su un tipo di variabile che il produttore del software ha già catturato con l'esperienza in
+progetti passati.
+
+\subsection{Testing Combinatorio}
+
+In presenza di più dati di input, il loro prodotto cartesiano potrebbe portare
+ad un insieme troppo grande e poco gestibile. Si usano delle tecniche per ridurre
+l'esplosione combinatoria.
+
+Le strategie a \textbf{\textcolor{cyan}{vincoli}} possono essere di tre tipi:
+\begin{itemize}
+    \item Di \textcolor{cyan}{Errore}: per ridurre le combinazioni si considera
+        un solo caso, per ogni input, quando non è valido.
+    \item Di \textcolor{cyan}{Proprietà}: 
+    \item \textcolor{cyan}{Singoletti}: 
+\end{itemize}
