@@ -176,6 +176,24 @@ Le strategie a \textbf{\textcolor{cyan}{vincoli}} possono essere di tre tipi:
 \begin{itemize}
     \item Di \textcolor{cyan}{Errore}: per ridurre le combinazioni si considera
         un solo caso, per ogni input, quando non è valido.
-    \item Di \textcolor{cyan}{Proprietà}: 
-    \item \textcolor{cyan}{Singoletti}: 
+    \item Di \textcolor{cyan}{Proprietà}: in alcuni casi si può verificare che per alcuni input
+        i valori vengano divisi in base a delle \emph{"property"}, mentre per altri input i valori
+        possono essere divisi in delle \emph{"if property"}, ciò sta a significare che se un input ha un
+        valore che appartiene ad una \emph{"property"}, gli altri input possono solo assumere valori
+        che appartengono alla corrispondente \emph{"if property"}.
+    \item \textcolor{cyan}{Singoletti}: si può decidere per un input di fissare un solo valore.
 \end{itemize}
+
+Questa tecnica basata sui vincoli, funziona bene solo se i vincoli che introduciamo
+solo reali nel dominio che stiamo analizzando e non sono aggiunti solo per lo scopo di
+limitare le combinazioni.
+
+\subsection{Pairwise Testing}
+
+Quando non è possibile limitare il dominio, si opta per un'altra tecnica,
+ovvero si generano tutte le combinazioni possibili solo per i sottoinsiemi di
+soli 2 input ed infine si sommano i risultati. Molte volte si possono generare
+le combinazioni in maniera efficiente, ovvere generare solo i valori fra i due
+insiemi di input più grandi e poi aggiungere ad ogni coppia ottenuta un elemento
+di un terzo insieme in modo tale che vengano coperti anche tutti i casi di combinazione
+tra il primo insieme ed il terzo, e tra il secondo insieme ed il terzo.
