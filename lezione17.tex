@@ -1,0 +1,159 @@
+\subsection{Criteri White-Box}
+
+Sono criteri che si basano sulla struttura del codice per individuare
+i casi di input. Aiutano ad aggiungere altri test oltre a quelli generati
+con quelli di tipo \emph{black-box}.
+
+Si dice che un programma non è testato adeguatamente se tutti i suoi cammini
+non vengono esercitati dai test.
+
+Un \emph{\textcolor{cyan}{grafo di flusso}} definisce la struttura
+del codice identificandone tutte le parti collegate fra loro.
+
+Quindi si cerca un insieme di valori per i dati di input in modo tale che
+vengano esercitati tutti i comandi e tutte le condizioni del programma.
+
+La \textbf{\textcolor{cyan}{Misura di Copertura}} per i \textbf{comandi} è definita come segue:
+\begin{equation*}
+    Misura\;di\;Copertura = \frac{Numero\;di\;Comandi\;Esercitati}{Numero\;di\;Comandi\;Totali}
+\end{equation*}
+
+È importante sottolineare che la \emph{copertura} non è monotona rispetto
+alla dimensione dell'insieme di test. Infatti ci possono essere insiemi più piccoli
+che magari garantiscono una copertura maggiore.
+
+Se in un caso di test vengono eseguiti tutti comandi, non è detto che vengano
+eseguite anche tutte le condizioni, quindi si parla anche di \textbf{\textcolor{cyan}{Misura di Copertura}}
+per le \textbf{condizioni}:
+\begin{equation*}
+    Misura\;di\;Copertura = \frac{Numero\;di\;Archi\;Entranti}{Numero\;di\;Archi\;Totali}
+\end{equation*}
+
+Per le \emph{condizioni composte}, bisogna anche fare in modo che i test
+esercitino tutti i possibili valori di verità delle singole condizioni semplici all'interno.
+
+\paragraph{\textcolor{cyan}{Copertura di Condizioni Semplici}} Un insieme di test
+per un programma copre tutte le condizioni semplici (\emph{\textcolor{cyan}{basic condition}})
+se per ogni condizione semplice nel programma, l'insieme di test ne contiene almeno
+uno in cui la condizione vale \verb|true| e almeno uno in cui vale \verb|false|.
+
+\begin{equation*}
+    Copertura\;delle\;Basic\;Condition = \frac{Numero\;di\;Valori\;di\;Verit\grave{a}\;Assunti}{2^{Numero\;di\;Basic\;Condition}}
+\end{equation*}
+
+Nella \emph{Copertura delle Multiple Condition}, per ogni condizione multipla con $n$
+condizioni semplici, invece, si cerca di coprire tutte le $2^n$ possibili combinazioni.
+Ma grazie alla valutazione \emph{short-circuit} \footnote{\url{https://en.wikipedia.org/wiki/Short-circuit_evaluation}}
+di molti linguaggi di programmazione ci si può ridurre a meno.
+
+La \emph{Copertura dei Cammini}, invece richiede di percorrere tutti i cammini, cresce in modo
+esponenziale col il numero di decisioni. Ovviamente in presenza di cicli
+il numero di cammini è potenzialmente infinito, per questo ci si limita a
+richiedere casi di test che esercitino ogni ciclo 0 volte, 1 volta e più di una volta.
+
+\subsection{Fault Based Testing}
+
+Ipotizza dei difetti potenziali nel codice sotto test, ovvero si valuta
+un insieme di test sulla base della loro capacità di rilevare i difetti ipotizzati.
+
+La tecnica più nota è il \textbf{\textcolor{cyan}{Test Mutazionale}}, ovvero
+si iniettano difetti modificando il codice.
+
+Occorre priva aver esercitato un programma $P$ su una batteria di test $T$
+e si verifica che $P$ sia corretto rispetto a $T$. Successivamente si introducono
+dei piccoli difetti in $P$ chiamate \emph{mutazioni}. Il programma \emph{mutante} è
+indicato con $P'$. Quindi si eseguono su $P'$ gli stessi test di $T$.
+
+Se il test non rileva i difetti iniettati, allora significa che la batteria di test non
+era buona, se li rileva si ha una maggiore fiducia su essa.
+
+Nella realtà si applicano tante piccole mutazioni a $P$ per ottenere una
+sequenza di mutanti $P_1, P_2, \dots, P_n$. Si dice che $T$ uccide il mutante
+$P_j$ se rileva un malfunzionamento in almeno un caso di test di $T$.
+
+L'\textbf{\textcolor{cyan}{Efficacia di un Test}} è il rapporto $\frac{Nr.\;Mutanti\;Uccisi}{Numero\;Totale\;Mutanti}$.
+
+Un mutante sopravvive a una test suite se per tutti i test case della batteria non si
+distingue l'esito del test se eseguito sul programma originale o sul mutante.
+
+Qui si lavora sull'assunzione che iniettando difetti piccoli e artificiali è
+possibile individuare difetti più complessi e reali.
+
+Praticamente si iniettano $M$ difetti meccanici nell'originale ottenendo il mutante,
+si esegue il mutante sulla batteria, e si troverà un numero di difetti uguale a $N$.
+Se $N > M$ allora ho trovato difetti non artificiali che erano presenti anche nel programma originale.
+
+Esempi di mutazioni:
+\begin{itemize}
+    \item \textcolor{cyan}{CRP}: sostituzione di una costante per una costante.
+    \item \textcolor{cyan}{ROR}: sostituzione di un operatore relazione (da $\leq$ a $<$).
+    \item \textcolor{cyan}{VIE}: eliminazione dell'inizializzazione di una variabile.
+    \item \textcolor{cyan}{LRC}: sostituzione di un operatore logico.
+    \item \textcolor{cyan}{ABS}: inserimento di un valore assoluto.
+\end{itemize}
+
+Un \emph{mutante} si dice \textbf{\emph{\textcolor{cyan}{invalido}}} se non è
+sintatticamente corretto, ovvero se non passa la compilazione, altrimenti si dice
+\textbf{\emph{\textcolor{cyan}{valido}}}.
+
+Un \emph{mutante} si dice \textbf{\emph{\textcolor{cyan}{utile}}} se è \emph{valido}
+e distinguerlo dal programma originale non è facile, ovvero esiste solo un piccolo sottoinsieme
+di casi di test che lo consente. Invece si dice \textbf{\emph{\textcolor{cyan}{inutile}}} se è
+ucciso da quasi tutti i casi di test.
+
+Si cerca di costruire mutazioni che producano mutanti \emph{utili} e \emph{validi}.
+
+Un mutante può essere \textbf{\emph{\textcolor{cyan}{equivalente}}} al programma originale
+se ad esempio la mutazione non crea un vero difetto o se la batteria di test era troppo debole.
+
+Ovviamente questa tecnica è limitata dal numero di mutanti che possono essere definiti,
+dato che il loro costo di realizzazione, il tempo e le risorse necessarie ad eseguire
+i test possono essere molto elevati.
+
+\subsection{Oracolo ed Output Attesi}
+
+\begin{definition}[Oracolo]
+    Un \textbf{\textcolor{cyan}{oracolo}} è uno strumento utilizzato per generare
+    i risultati attesi di una batteria di test. La sua importanza è che fornisce
+    un punto di riferimento per la correttezza del sistema durante il testing.
+\end{definition}
+
+L'\emph{output atteso} può essere trovato in diversi modi:
+\begin{itemize}
+    \item \emph{Risultati ricavati dalle specifiche}.
+    \item \emph{Inversione delle funzioni}: quando la funzione inversa è più facile. In questo modo
+        dall'output si calcola l'input.
+    \item \emph{Versioni precedenti del codice}: per le funzionalità non modificate.
+    \item \emph{Versioni multiple indipendenti}: programmi preesistenti, oppure semplificazioni
+        di algortimi, che sono poco efficienti ma corrette.
+    \item \emph{Semplificazione dei dati d'ingresso}: si provano le funzionalità su dati semplici,
+        oppure i risultati sono noti tramite l'utilizzo di altri mezzi, o addirittura ci si mette
+        nell'ipotesi di avere un comportamento costante.
+    \item \emph{Semplificazione dei risultati}: ci si basa su risultati plausibili,
+        ma si applicano dei vincoli fra gli input e gli output, e delle invarianti
+        sugli output.
+\end{itemize}
+
+\subsection{Test di Sistema}
+
+\begin{itemize}
+    \item \textcolor{cyan}{Facility Test}: mira a controllare che ogni funzionalità stabilita nei requisiti
+        sia stata realizzata correttamente.
+    \item \textcolor{cyan}{Security Test}: si cerca di accedere a dati e funzionalità che dovrebbero essere riservate.
+    \item \textcolor{cyan}{Usability Test}: si valuta la facilità d'uso del software da parte dell'utente finale. Ci si basa
+        sulla documentazione e sul livello di competenza dell'utenza.
+    \item \textcolor{cyan}{Performance Test}: si valuta l'efficienza di un sistema rispetto ai tempi di elaborazione
+        e risposta. Si sottopone il sistema a diversi livelli di carico.
+    \item \textcolor{cyan}{Volume Test}: qui si sottopone il sistema al carico di lavoro massimo stabilito
+        nei requisiti. Si cercano malfunzionamenti che non si presentano normalmente.
+    \item \textcolor{cyan}{Stress Test}: si sottopone il sistema a carichi di lavoro superiori a quelli previsti
+        nei requisiti, oppure si porta in condizioni non previste, ad esempio sottraendogli risorse
+        di memoria e calcolo. Lo scopo è quello di controllare la capacità di \emph{recovery}
+        del sistema dopo un fallimento.
+    \item \textcolor{cyan}{Storage Use Test}: è un controllo mirato alla richiesta delle risorse, in particolare
+        la memoria, ed ha implicazioni sulla definizione dei requisiti minimi del sistema per poter installare il software.
+    \item \textcolor{cyan}{Configuration Test}: si prova il sistema su sistemi operativi diversi e con
+        differenti hardware installati.
+    \item \textcolor{cyan}{Compatibility Test}: si valuta la compatibilità del software con altri, anche
+        con una sua versione precendente che deve rimpiazzare.
+\end{itemize}
